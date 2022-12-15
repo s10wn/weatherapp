@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "weatherApp",
-    "slug": "weatherApp",
+    "slug": "weatherapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "190cf575-f2f2-4399-b896-f1263897d3b0"
+      }
+    },
+    "owner": "s10wn"
   }
 }
