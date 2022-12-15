@@ -77,7 +77,7 @@ export const Weather = ({temp, con}) => {
     <LinearGradient 
     colors={weatherOptions[con].gradient}
     style={styles.container}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
          <View style={styles.halfcontainer}>
          <MaterialCommunityIcons name={weatherOptions[con].iconName} size={120} color="#fff" />
 
@@ -94,7 +94,7 @@ export const Weather = ({temp, con}) => {
 
 Weather.propTypes ={
     temp: propTypes.number.isRequired,
-    con: propTypes.oneOf(["Thunderstorm", "Drizzle", "Rain", "Snow", "Atmosphere", "Clear", "Clouds"]).isRequired
+    // con: propTypes.oneOf(["Thunderstorm", "Drizzle", "Rain", "Snow", "Atmosphere", "Clear", "Clouds"]).isRequired
 }
 
 const styles = StyleSheet.create({

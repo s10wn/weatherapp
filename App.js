@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet} from 'react-native';
 import { Alert} from 'react-native';
 import * as Location from 'expo-location';
+// import Permissions from 'expo-permissions';
+// import { Location, Permissions} from 'expo';
 import { Loading } from './Loading';
 import axios from 'axios';
 import { Weather } from './Weather';
@@ -26,17 +28,16 @@ export default class extends React.Component{
     })
   }
 
-  getLocation = async () => {
-   
-    Location.requestBackgroundPermissionsAsync();
-    const {coords : {latitude, longitude}} = await Location.getCurrentPositionAsync();
-    this.getWeather(latitude, longitude)
-
- 
-    // TODO: всделать api
-
-    //  console.log(coords.latitude, coords.longitude);
-     
+  _getLocation = async () => {
+    Location.requestForegroundPermissionsAsync();
+    const { coords: { latitude, longitude } } = await Location.getCurrentPositionAsync();
+    this.getWeather(latitude, longitude);
+  };
+  get getLocation() {
+    return this._getLocation;
+  }
+  set getLocation(value) {
+    this._getLocation = value;
   }
 
   componentDidMount () {

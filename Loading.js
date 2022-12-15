@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native';
 export const Loading = () => {
   return (
     <View style={styles.container}>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
         <Text style={styles.text}>Loading Weather...</Text>
     </View>
   )
